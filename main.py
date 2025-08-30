@@ -6,6 +6,7 @@ from Auth import auth_page
 from Timeline import timeline
 from load_Calculator import load_calculator
 from leaderboard import leaderboard
+from stock import stock_market_section
 import time
 
 try:
@@ -200,7 +201,7 @@ def Dashboard():
 
     st.sidebar.markdown("---")
     st.sidebar.markdown("### Navigate")
-    menu = st.sidebar.radio("", ["Chatbot", "Savings Game", "Saving Timeline","Simple Loan Calculator", "Leaderboard"])
+    menu = st.sidebar.radio("", ["Chatbot", "Savings Game", "Saving Timeline","Simple Loan Calculator", "Stocks" ,"Leaderboard"])
     if st.session_state["logged_in"]:
         if st.sidebar.button("🔒 Logout"):
             st.session_state["logged_in"] = False
@@ -270,6 +271,8 @@ def Dashboard():
         timeline()
     elif menu == "Simple Loan Calculator":
         load_calculator()
+    elif    menu == "Stocks":
+        stock_market_section()
     elif menu ==  "Leaderboard":
         leaderboard()
 
@@ -278,4 +281,5 @@ if __name__ == "__main__":
     if st.session_state["logged_in"]:
         Dashboard()
     else:
+
         auth_page()
