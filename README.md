@@ -26,8 +26,10 @@ It consists of a clean register and login page
     ```pip install -r requirements.txt```
 3.Run the program
     - run the main.py file to use the gemini version of the project(recommened)
+      
         ``` streamlit run main.py```
-    enter your gemini key in line 
+    enter your gemini key in line
+
     ```13     api_key = "" ```
     - run the main2.py file to use the IBM Granite-4-0-tiny model 
         ``` streamlit run main2.py```
